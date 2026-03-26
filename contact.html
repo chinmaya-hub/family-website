@@ -2,11 +2,59 @@
 <html>
 <head>
 <title>Contact</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- ICON LIBRARY -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
-body{font-family:Poppins;background:linear-gradient(-45deg,#667eea,#764ba2,#6dd5ed,#2193b0);color:white;}
-.navbar{text-align:center;padding:15px;}
-.navbar a{margin:10px;color:white;text-decoration:none;}
-.card{width:350px;margin:60px auto;background:rgba(255,255,255,0.2);padding:30px;border-radius:20px;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(-45deg,#667eea,#764ba2,#6dd5ed,#2193b0);
+color:white;
+}
+
+/* NAVBAR */
+.navbar{
+text-align:center;
+padding:15px;
+}
+
+.navbar a{
+margin:10px;
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+/* CARD */
+.card{
+width:350px;
+margin:60px auto;
+background:rgba(255,255,255,0.2);
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+/* CONTACT ITEMS */
+.contact-item{
+margin:15px 0;
+font-size:16px;
+}
+
+.contact-item i{
+margin-right:10px;
+color:#00ffcc;
+}
+
 </style>
 </head>
 
@@ -22,10 +70,20 @@ body{font-family:Poppins;background:linear-gradient(-45deg,#667eea,#764ba2,#6dd5
 </div>
 
 <div class="card">
-<h2>Contact</h2>
-<p>Name: Chinmaya</p>
-<p>Email: piroichinmaya64@gmail.com</p>
-<p>Instagram: this_is_chintu_07</p>
+<h2>Contact 📞</h2>
+
+<p class="contact-item">
+<i class="fa-solid fa-user"></i> Chinmaya
+</p>
+
+<p class="contact-item">
+<i class="fa-solid fa-envelope"></i> piroichinmaya64@gmail.com
+</p>
+
+<p class="contact-item">
+<i class="fa-brands fa-instagram"></i> this_is_chintu_07
+</p>
+
 </div>
 
 </body>
