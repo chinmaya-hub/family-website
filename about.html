@@ -61,7 +61,7 @@ width:100%;
 
 /* CARD */
 .card{
-width:500px;
+width:520px;
 margin:60px auto;
 padding:35px;
 border-radius:25px;
@@ -82,9 +82,9 @@ margin-bottom:20px;
 font-size:30px;
 }
 
-/* TEXT */
+/* SECTION */
 .section{
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
 .section h3{
@@ -95,13 +95,40 @@ margin-bottom:8px;
 .section p{
 font-size:15px;
 line-height:1.8;
-opacity:0.95;
 }
 
-/* HIGHLIGHT */
-.highlight{
-color:#00ffcc;
-font-weight:600;
+/* IMAGE */
+.school-img{
+width:100%;
+border-radius:15px;
+margin-top:12px;
+cursor:pointer;
+transition:0.4s;
+}
+
+.school-img:hover{
+transform:scale(1.03);
+box-shadow:0 0 20px #00ffcc;
+}
+
+/* POPUP */
+#popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+#popup img{
+width:90%;
+max-height:90%;
+border-radius:10px;
 }
 
 /* RESPONSIVE */
@@ -131,56 +158,60 @@ width:90%;
 <h2>About Me 👨‍💻</h2>
 
 <div class="section">
-<h3>👋 Introduction</h3>
+<h3>🎓 My School Life</h3>
 <p>
-Hi, I am <span class="highlight">Chinmaya</span>, currently pursuing <span class="highlight">B.Tech in Computer Science Engineering (2nd Year)</span>.  
-I am a passionate and creative person who enjoys learning new technologies and exploring digital creativity.
+I completed my schooling from <b>Saraswati Sishu Vidya Mandir, Banki</b>.  
+This is where I built my foundation and learned discipline, education and values.
 </p>
+
+<img src="school photo.png" class="school-img" onclick="openImg(this.src)">
 </div>
 
 <div class="section">
-<h3>🎓 Education</h3>
+<h3>📘 Education</h3>
 <p>
-I completed my school education from <span class="highlight">Saraswati Sishu Vidya Mandir, Banki</span>, where I built a strong academic foundation.  
-After that, I pursued my +2 in Science from <span class="highlight">New Star Science College</span>.  
-Currently, I am continuing my higher studies in the field of technology and software development.
+After school, I completed my +2 Science from <b>New Star Science College</b>.  
+Currently, I am pursuing <b>B.Tech CSE (2nd Year)</b>.
 </p>
 </div>
 
 <div class="section">
 <h3>👨‍👩‍👧 Family</h3>
 <p>
-I belong to a supportive and loving family. My father is a <span class="highlight">Railway employee</span> and my mother is a <span class="highlight">homemaker</span>.  
-I also have a younger sister who is an important part of my life.
+My father is a railway employee and my mother is a homemaker.  
+I also have a younger sister.
 </p>
 
 <p>
-We live in a joint family environment where my <span class="highlight">elder uncle (Bade Papa)</span> is a <span class="highlight">Head Teacher</span> in a school.  
-My <span class="highlight">elder mother(badi maa)</span> and my cousins (two sisters and one brother) make our family even more lively and supportive.
+We live in a joint family where my elder uncle is a head teacher, and along with my cousins, our family is full of support and happiness.
 </p>
 </div>
 
 <div class="section">
-<h3>🎯 Interests & Passion</h3>
+<h3>🎯 Interests</h3>
 <p>
-I have a strong interest in <span class="highlight">gaming 🎮</span>, <span class="highlight">music 🎧</span>, and <span class="highlight">video editing 🎬</span>.  
-I also enjoy <span class="highlight">photography 📸</span>, <span class="highlight">traveling ✈️</span>, and spending time with nature 🌿 and animals 🐾.
-</p>
-
-<p>
-My journey started with cricket 🏏, but after the lockdown, I gradually shifted towards esports and digital creativity, where I found my true interest.
-</p>
-</div>
-
-<div class="section">
-<h3>🚀 Future Goals</h3>
-<p>
-My goal is to grow as a skilled developer and creative professional, combining technology with creativity to build unique and impactful projects.  
-I am continuously learning and improving myself to achieve success in the tech world.
+I love gaming 🎮, music 🎧, video editing 🎬 and photography 📸.  
+I also enjoy traveling ✈️, nature 🌿 and animals 🐾.
 </p>
 </div>
 
 </div>
+
+<!-- POPUP -->
+<div id="popup" onclick="closeImg()">
+  <img id="popupImg">
+</div>
+
+<script>
+function openImg(src){
+  document.getElementById("popup").style.display="flex";
+  document.getElementById("popupImg").src=src;
+}
+
+function closeImg(){
+  document.getElementById("popup").style.display="none";
+}
+</script>
 
 </body>
 </html>
