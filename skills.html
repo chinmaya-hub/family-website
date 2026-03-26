@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skills</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+background:linear-gradient(-45deg,#667eea,#764ba2,#6dd5ed,#2193b0);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+color:white;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.navbar{
+display:flex;
+justify-content:center;
+gap:30px;
+padding:15px;
+background:rgba(255,255,255,0.2);
+backdrop-filter:blur(10px);
+}
+
+.navbar a{
+text-decoration:none;
+color:white;
+font-weight:600;
+}
+
+.container{
+width:400px;
+margin:50px auto;
+background:rgba(255,255,255,0.2);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(15px);
+}
+
+.skill{
+margin:15px 0;
+}
+
+.bar{
+height:10px;
+background:#ccc;
+border-radius:10px;
+overflow:hidden;
+}
+
+.fill{
+height:100%;
+background:lime;
+}
+
+.html{width:80%;}
+.video{width:90%;}
+.music{width:70%;}
+.gaming{width:85%;}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="gallery.html">Gallery</a>
+<a href="skills.html">Skills</a>
+</div>
+
+<div class="container">
+
+<h2>My Skills 🚀</h2>
+
+<div class="skill">HTML
+<div class="bar"><div class="fill html"></div></div>
+</div>
+
+<div class="skill">Video Editing 🎬
+<div class="bar"><div class="fill video"></div></div>
+</div>
+
+<div class="skill">Music Production 🎧
+<div class="bar"><div class="fill music"></div></div>
+</div>
+
+<div class="skill">Gaming / Esports 🎮
+<div class="bar"><div class="fill gaming"></div></div>
+</div>
+
+</div>
+
+</body>
+</html>
