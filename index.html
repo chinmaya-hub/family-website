@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Chinmaya | Ultra Portfolio</title>
+  <title>Chinmaya | Portfolio</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -18,15 +18,13 @@
       height: 100vh;
       background: linear-gradient(-45deg, #667eea, #764ba2, #6dd5ed, #2193b0);
       background-size: 400% 400%;
-      animation: gradientBG 10s ease infinite;
-      display: flex;
-      flex-direction: column;
+      animation: bg 10s ease infinite;
     }
 
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    @keyframes bg {
+      0% {background-position:0% 50%;}
+      50% {background-position:100% 50%;}
+      100% {background-position:0% 50%;}
     }
 
     /* Navbar */
@@ -37,12 +35,12 @@
       padding: 15px;
       background: rgba(255,255,255,0.2);
       backdrop-filter: blur(10px);
-      font-weight: 600;
     }
 
     .navbar a {
       text-decoration: none;
       color: white;
+      font-weight: 600;
       transition: 0.3s;
     }
 
@@ -53,20 +51,20 @@
     /* Card */
     .card {
       width: 420px;
-      margin: auto;
+      margin: 60px auto;
       background: rgba(255,255,255,0.2);
       backdrop-filter: blur(15px);
       border-radius: 20px;
       padding: 30px;
       text-align: center;
       color: white;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-      animation: fadeIn 1.2s ease;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      animation: fade 1.2s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes fade {
+      from {opacity:0; transform:translateY(20px);}
+      to {opacity:1; transform:translateY(0);}
     }
 
     /* Image */
@@ -80,7 +78,6 @@
     }
 
     h1 {
-      font-size: 28px;
       margin-bottom: 5px;
     }
 
@@ -118,14 +115,14 @@
       box-shadow: 0 0 15px rgba(255,255,255,0.7);
     }
 
-    /* Typing Cursor */
+    /* Typing effect */
     .typing::after {
       content: "|";
       animation: blink 1s infinite;
     }
 
     @keyframes blink {
-      50% { opacity: 0; }
+      50% {opacity:0;}
     }
 
   </style>
@@ -144,20 +141,23 @@
   <!-- Card -->
   <div class="card">
 
-    <!-- 🔥 Your Image -->
+    <!-- Image -->
     <img src="photo2.png" class="profile-img">
 
-    <!-- Typing Name -->
+    <!-- Name -->
     <h1 class="typing" id="name"></h1>
 
     <div class="subtitle">B.Tech CSE Student 💻</div>
 
+    <!-- BIO -->
     <div class="bio">
-      Passionate about gaming 🎮, creativity 🎧, and visuals 🎬.<br><br>
+      I started my journey with a love for cricket 🏏, but after the lockdown, I developed a deep interest in online gaming 🎮 and even experienced competitive esports. <br><br>
 
-      Started with cricket 🏏, but post-lockdown discovered love for online gaming and even stepped into esports.  
+      I am passionate about creativity — from producing music 🎧 to editing videos 🎬 with precision and style. <br><br>
 
-      I also create music beats 🎧, edit videos 🎬, and enjoy photography & videography 📸.
+      I also enjoy photography and videography 📸, capturing moments and turning them into visuals that tell a story. <br><br>
+
+      Beyond tech, I love traveling ✈️, exploring nature 🌿, and spending time with animals 🐾. Music 🎶 and different seasons 🌦️ inspire me and keep my creativity alive.
     </div>
 
     <!-- Buttons -->
@@ -173,15 +173,15 @@
     const text = "Chinmaya";
     let i = 0;
 
-    function typeEffect() {
+    function type() {
       if (i < text.length) {
         document.getElementById("name").innerHTML += text.charAt(i);
         i++;
-        setTimeout(typeEffect, 120);
+        setTimeout(type, 120);
       }
     }
 
-    typeEffect();
+    type();
   </script>
 
 </body>
