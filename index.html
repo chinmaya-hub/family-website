@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Chinmaya | Portfolio</title>
+  <title>Chinmaya | Ultra Portfolio</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -15,8 +15,18 @@
     }
 
     body {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: #333;
+      height: 100vh;
+      background: linear-gradient(-45deg, #667eea, #764ba2, #6dd5ed, #2193b0);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     /* Navbar */
@@ -25,31 +35,33 @@
       justify-content: center;
       gap: 30px;
       padding: 15px;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.2);
       backdrop-filter: blur(10px);
       font-weight: 600;
     }
 
     .navbar a {
       text-decoration: none;
-      color: #333;
+      color: white;
       transition: 0.3s;
     }
 
     .navbar a:hover {
-      color: #667eea;
+      color: yellow;
     }
 
-    /* Main Card */
+    /* Card */
     .card {
-      max-width: 420px;
-      margin: 60px auto;
-      background: white;
-      padding: 35px;
+      width: 420px;
+      margin: auto;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(15px);
       border-radius: 20px;
+      padding: 30px;
       text-align: center;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-      animation: fadeIn 1s ease-in-out;
+      color: white;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      animation: fadeIn 1.2s ease;
     }
 
     @keyframes fadeIn {
@@ -59,21 +71,22 @@
 
     /* Image */
     .profile-img {
-      width: 170px;
-      height: 170px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #667eea;
+      border: 4px solid white;
       margin-bottom: 15px;
     }
 
     h1 {
-      font-weight: 600;
+      font-size: 28px;
       margin-bottom: 5px;
     }
 
     .subtitle {
-      color: #777;
+      font-size: 14px;
+      opacity: 0.8;
       margin-bottom: 15px;
     }
 
@@ -81,29 +94,38 @@
     .bio {
       font-size: 14px;
       line-height: 1.7;
-      color: #444;
       margin-bottom: 20px;
     }
 
     /* Buttons */
     .btn {
       display: inline-block;
-      padding: 12px 22px;
+      padding: 12px 20px;
       margin: 8px;
       border-radius: 25px;
-      color: white;
       text-decoration: none;
+      color: white;
       font-weight: 500;
       transition: 0.3s;
     }
 
-    .btn-about { background: #4CAF50; }
-    .btn-contact { background: #2196F3; }
-    .btn-gallery { background: #ff7b00; }
+    .btn-about { background: #00c853; }
+    .btn-contact { background: #2979ff; }
+    .btn-gallery { background: #ff6d00; }
 
     .btn:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(255,255,255,0.7);
+    }
+
+    /* Typing Cursor */
+    .typing::after {
+      content: "|";
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
     }
 
   </style>
@@ -122,27 +144,45 @@
   <!-- Card -->
   <div class="card">
 
-    <!-- 🔥 Use your uploaded image -->
+    <!-- 🔥 Your Image -->
     <img src="photo2.png" class="profile-img">
 
-    <h1>Chinmaya</h1>
+    <!-- Typing Name -->
+    <h1 class="typing" id="name"></h1>
+
     <div class="subtitle">B.Tech CSE Student 💻</div>
 
     <div class="bio">
-      I used to enjoy playing cricket 🏏, but after lockdown I developed a strong passion for online gaming 🎮 and even played as an esports player. <br><br>
+      Passionate about gaming 🎮, creativity 🎧, and visuals 🎬.<br><br>
 
-      I am also interested in music production 🎧 and have created beats. <br><br>
+      Started with cricket 🏏, but post-lockdown discovered love for online gaming and even stepped into esports.  
 
-      Along with that, I am a skilled video editor 🎬 and love photography & videography 📸.
+      I also create music beats 🎧, edit videos 🎬, and enjoy photography & videography 📸.
     </div>
 
     <!-- Buttons -->
-    <a href="about.html" class="btn btn-about">About Me</a>
+    <a href="about.html" class="btn btn-about">About</a>
     <a href="contact.html" class="btn btn-contact">Contact</a>
     <br>
     <a href="gallery.html" class="btn btn-gallery">Gallery</a>
 
   </div>
+
+  <!-- Typing Script -->
+  <script>
+    const text = "Chinmaya";
+    let i = 0;
+
+    function typeEffect() {
+      if (i < text.length) {
+        document.getElementById("name").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 120);
+      }
+    }
+
+    typeEffect();
+  </script>
 
 </body>
 </html>
