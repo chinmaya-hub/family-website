@@ -13,7 +13,6 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
-/* BACKGROUND */
 body{
 background:linear-gradient(-45deg,#667eea,#764ba2,#6dd5ed,#2193b0);
 background-size:400% 400%;
@@ -42,7 +41,27 @@ text-decoration:none;
 font-weight:600;
 }
 
-/* GALLERY GRID */
+/* FILTER BUTTONS */
+.filters{
+text-align:center;
+margin-top:20px;
+}
+
+.filters button{
+margin:5px;
+padding:8px 15px;
+border:none;
+border-radius:20px;
+background:#00ffcc;
+cursor:pointer;
+font-weight:bold;
+}
+
+.filters button:hover{
+background:white;
+}
+
+/* GALLERY */
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -50,8 +69,12 @@ gap:15px;
 padding:20px;
 }
 
-/* IMAGES */
-.gallery img{
+.item{
+text-align:center;
+color:white;
+}
+
+.item img{
 width:100%;
 height:250px;
 object-fit:cover;
@@ -60,11 +83,11 @@ cursor:pointer;
 transition:0.3s;
 }
 
-.gallery img:hover{
+.item img:hover{
 transform:scale(1.05);
 }
 
-/* POPUP FULL SCREEN */
+/* POPUP */
 #popup{
 display:none;
 position:fixed;
@@ -81,21 +104,17 @@ z-index:999;
 #popup img{
 width:90%;
 max-height:90%;
-border-radius:10px;
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 @media(max-width:600px){
-.gallery img{
-height:200px;
-}
+.item img{height:200px;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
@@ -105,35 +124,89 @@ height:200px;
 <a href="projects.html">Projects</a>
 </div>
 
+<!-- FILTERS -->
+<div class="filters">
+<button onclick="filter('all')">All</button>
+<button onclick="filter('school')">School</button>
+<button onclick="filter('esports')">Esports</button>
+<button onclick="filter('personal')">Personal</button>
+</div>
+
 <!-- GALLERY -->
 <div class="gallery">
 
-<img src="school photo.png" onclick="openImg(this.src)"> <!-- SCHOOL PHOTO -->
+<div class="item school">
+<img src="school photo.png" onclick="openImg(this.src)">
+<p>My School 🏫</p>
+</div>
 
-<img src="esports photo.jpg" onclick="openImg(this.src)"> <!-- ✅ ADDED -->
+<div class="item esports">
+<img src="esports photo.jpg" onclick="openImg(this.src)">
+<p>Esports Journey 🎮</p>
+</div>
 
+<div class="item personal">
 <img src="photo1.webp" onclick="openImg(this.src)">
+<p>Photo 1</p>
+</div>
+
+<div class="item personal">
 <img src="photo2.png" onclick="openImg(this.src)">
+<p>Photo 2</p>
+</div>
+
+<div class="item personal">
 <img src="photo3.png" onclick="openImg(this.src)">
+<p>Photo 3</p>
+</div>
+
+<div class="item personal">
 <img src="photo4.jpg" onclick="openImg(this.src)">
+<p>Photo 4</p>
+</div>
+
+<div class="item personal">
 <img src="photo5.jpg" onclick="openImg(this.src)">
+<p>Photo 5</p>
+</div>
+
+<div class="item personal">
 <img src="photo6.png" onclick="openImg(this.src)">
+<p>Photo 6</p>
+</div>
 
 </div>
 
 <!-- POPUP -->
 <div id="popup" onclick="closeImg()">
-  <img id="popupImg">
+<img id="popupImg">
 </div>
 
 <script>
 function openImg(src){
-  document.getElementById("popup").style.display="flex";
-  document.getElementById("popupImg").src=src;
+document.getElementById("popup").style.display="flex";
+document.getElementById("popupImg").src=src;
 }
 
 function closeImg(){
-  document.getElementById("popup").style.display="none";
+document.getElementById("popup").style.display="none";
+}
+
+/* FILTER FUNCTION */
+function filter(category){
+let items=document.querySelectorAll(".item");
+
+items.forEach(item=>{
+if(category==="all"){
+item.style.display="block";
+}
+else if(item.classList.contains(category)){
+item.style.display="block";
+}
+else{
+item.style.display="none";
+}
+});
 }
 </script>
 
