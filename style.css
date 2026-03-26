@@ -20,9 +20,9 @@ body {
 
 .card {
     background: white;
-    width: 300px;
+    width: 320px;
     margin: 50px auto;
-    padding: 20px;
+    padding: 25px;
     border-radius: 20px;
     box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
 }
@@ -40,4 +40,23 @@ button {
     background: #3897f0;
     color: white;
     cursor: pointer;
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
 }
