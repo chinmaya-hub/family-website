@@ -2,85 +2,12 @@
 <html>
 <head>
 <title>Gallery</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-
-body{
-background:linear-gradient(-45deg,#667eea,#764ba2,#6dd5ed,#2193b0);
-background-size:400% 400%;
-animation:bg 10s ease infinite;
-color:white;
-}
-
-@keyframes bg{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-.navbar{
-display:flex;
-justify-content:center;
-gap:30px;
-padding:15px;
-background:rgba(255,255,255,0.2);
-backdrop-filter:blur(10px);
-}
-
-.navbar a{
-text-decoration:none;
-color:white;
-font-weight:600;
-}
-
-h2{text-align:center;margin-top:20px;}
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:20px;
-}
-
-.gallery img{
-width:100%;
-border-radius:15px;
-cursor:pointer;
-transition:0.3s;
-}
-
-.gallery img:hover{
-transform:scale(1.05);
-}
-
-/* Lightbox */
-.lightbox{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-}
-
-.lightbox img{
-display:block;
-margin:80px auto;
-max-width:80%;
-}
-
-.close{
-position:absolute;
-top:20px;
-right:30px;
-font-size:40px;
-cursor:pointer;
-}
-
+body{font-family:Poppins;background:linear-gradient(-45deg,#667eea,#764ba2,#6dd5ed,#2193b0);}
+.navbar{text-align:center;padding:15px;}
+.navbar a{margin:10px;color:white;text-decoration:none;}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:20px;}
+.gallery img{width:100%;border-radius:10px;}
 </style>
 </head>
 
@@ -91,33 +18,18 @@ cursor:pointer;
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
 <a href="gallery.html">Gallery</a>
+<a href="skills.html">Skills</a>
+<a href="projects.html">Projects</a>
 </div>
-
-<h2>My Gallery 📸</h2>
 
 <div class="gallery">
-<img src="photo1.webp" onclick="openImg(this)">
-<img src="photo2.png" onclick="openImg(this)">
-<img src="photo3.png" onclick="openImg(this)">
-<img src="photo4.jpg" onclick="openImg(this)">
-<img src="photo5.jpg" onclick="openImg(this)">
-<img src="photo6.png" onclick="openImg(this)">
+<img src="photo1.webp">
+<img src="photo2.png">
+<img src="photo3.png">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+<img src="photo6.png">
 </div>
-
-<div id="lightbox" class="lightbox">
-<span class="close" onclick="closeImg()">&times;</span>
-<img id="imgbox">
-</div>
-
-<script>
-function openImg(img){
-document.getElementById("lightbox").style.display="block";
-document.getElementById("imgbox").src=img.src;
-}
-function closeImg(){
-document.getElementById("lightbox").style.display="none";
-}
-</script>
 
 </body>
 </html>
