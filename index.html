@@ -1,154 +1,129 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Chinmaya | Portfolio</title>
+  <title>Chinmaya | Portfolio</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(-45deg, #ff9a9e, #a18cd1, #89f7fe, #66a6ff);
-    background-size: 400% 400%;
-    animation: gradientBG 12s ease infinite;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #89c2d9, #cdb4db);
+    }
 
-/* Background animation */
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+    /* Navbar */
+    .navbar {
+      text-align: center;
+      padding: 15px;
+      background: white;
+      font-weight: bold;
+    }
 
-/* Navbar */
-nav {
-    text-align: center;
-    padding: 15px;
-    background: rgba(255,255,255,0.8);
-    backdrop-filter: blur(10px);
-}
+    .navbar a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+    }
 
-nav a {
-    margin: 0 20px;
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-    transition: 0.3s;
-}
+    .navbar a:hover {
+      color: blue;
+    }
 
-nav a:hover {
-    color: #ff4081;
-}
+    /* Card */
+    .card {
+      width: 400px;
+      margin: 60px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+    }
 
-/* Card */
-.card {
-    width: 350px;
-    margin: 60px auto;
-    padding: 30px;
-    text-align: center;
-    background: rgba(255,255,255,0.9);
-    border-radius: 25px;
-    box-shadow: 0px 15px 40px rgba(0,0,0,0.2);
-    animation: fadeIn 1.5s ease;
-}
+    /* FIXED IMAGE */
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: contain; /* 🔥 important (no cut) */
+      background: #eee;
+      padding: 5px;
+    }
 
-/* Fade animation */
-@keyframes fadeIn {
-    from {opacity:0; transform:translateY(40px);}
-    to {opacity:1; transform:translateY(0);}
-}
+    h1 {
+      margin: 15px 0 5px;
+    }
 
-/* Image */
-.card img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    object-fit: cover;
-    transition: 0.4s;
-}
+    .subtitle {
+      color: gray;
+      margin-bottom: 20px;
+    }
 
-.card img:hover {
-    transform: scale(1.1);
-}
+    .bio {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 20px;
+    }
 
-/* Name */
-h1 {
-    margin: 15px 0 5px;
-}
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      border-radius: 25px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-/* Subtitle */
-p {
-    color: gray;
-}
+    .btn-about { background: #4CAF50; }
+    .btn-contact { background: #2196F3; }
+    .btn-gallery { background: #ff7b00; }
 
-/* Bio */
-.bio {
-    font-size: 14px;
-    margin-top: 15px;
-    color: #444;
-    line-height: 1.5;
-}
+    .btn:hover {
+      transform: scale(1.1);
+      opacity: 0.9;
+    }
+  </style>
 
-/* Buttons */
-.btn {
-    display: inline-block;
-    margin: 10px 5px;
-    padding: 12px 22px;
-    border-radius: 30px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.about { background: linear-gradient(45deg, #4CAF50, #2ecc71); }
-.contact { background: linear-gradient(45deg, #2196F3, #00c6ff); }
-.gallery { background: linear-gradient(45deg, #ff9800, #ff5722); }
-
-.btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
-}
-
-</style>
 </head>
 
 <body>
 
-<!-- Navbar -->
-<nav>
+  <!-- Navbar -->
+  <div class="navbar">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a href="gallery.html">Gallery</a>
-</nav>
+  </div>
 
-<!-- Card -->
-<div class="card">
+  <!-- Card -->
+  <div class="card">
 
-    <!-- YOUR REAL PHOTO -->
-    <img src="file_000000005b7c720897ec105e963bacc0.png">
+    <!-- 🔥 Replace with your uploaded file name -->
+    <img src="file_000000005b7c720897ec105e963bacc0.png" class="profile-img">
 
-    <!-- Name -->
     <h1>Chinmaya</h1>
+    <div class="subtitle">B.Tech CSE Student 💻</div>
 
-    <!-- Title -->
-    <p>B.Tech CSE Student 💻</p>
-
-    <!-- BIO -->
     <div class="bio">
-        I used to love playing cricket 🏏, but after lockdown, I developed a strong interest in online gaming 🎮 and even played as an esports player.  
-        <br><br>
-        I am also passionate about music production 🎧 and have experience creating beats.  
-        <br><br>
-        Along with that, I am a skilled video editor 🎬 and enjoy photography & videography 📸.
+      I used to love playing cricket 🏏, but after lockdown I developed a strong interest in online gaming 🎮 and even played as an esports player. <br><br>
+
+      I am also passionate about music production 🎧 and have experience creating beats. <br><br>
+
+      Along with that, I am a skilled video editor 🎬 and enjoy photography & videography 📸.
     </div>
 
     <!-- Buttons -->
-    <a href="about.html" class="btn about">About Me</a>
-    <a href="contact.html" class="btn contact">Contact</a>
-    <a href="gallery.html" class="btn gallery">Gallery</a>
+    <a href="about.html" class="btn btn-about">About Me</a>
+    <a href="contact.html" class="btn btn-contact">Contact</a>
+    <br>
+    <a href="gallery.html" class="btn btn-gallery">Gallery</a>
 
-</div>
+  </div>
 
 </body>
 </html>
