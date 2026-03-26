@@ -2,18 +2,120 @@
 <html>
 <head>
 <title>About</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-body{font-family:Poppins;background:linear-gradient(-45deg,#667eea,#764ba2,#6dd5ed,#2193b0);color:white;}
-.navbar{text-align:center;padding:15px;}
-.navbar a{margin:10px;color:white;text-decoration:none;}
-.card{width:400px;margin:60px auto;background:rgba(255,255,255,0.2);padding:30px;border-radius:20px;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+/* BACKGROUND */
+body{
+background:linear-gradient(-45deg,#667eea,#764ba2,#6dd5ed,#2193b0);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+color:white;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* NAVBAR */
+.navbar{
+display:flex;
+justify-content:center;
+gap:30px;
+padding:18px;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(12px);
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+font-weight:600;
+position:relative;
+}
+
+.navbar a::after{
+content:"";
+position:absolute;
+width:0%;
+height:2px;
+background:white;
+left:0;
+bottom:-5px;
+transition:0.3s;
+}
+
+.navbar a:hover::after{
+width:100%;
+}
+
+/* CARD */
+.card{
+width:500px;
+margin:60px auto;
+padding:35px;
+border-radius:25px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(20px);
+box-shadow:0 0 30px rgba(0,0,0,0.2);
+animation:fade 1.5s ease;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+font-size:30px;
+}
+
+/* TEXT */
+.section{
+margin-bottom:20px;
+}
+
+.section h3{
+color:#00ffcc;
+margin-bottom:8px;
+}
+
+.section p{
+font-size:15px;
+line-height:1.8;
+opacity:0.95;
+}
+
+/* HIGHLIGHT */
+.highlight{
+color:#00ffcc;
+font-weight:600;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+.card{
+width:90%;
+}
+}
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <div class="navbar">
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
@@ -23,9 +125,61 @@ body{font-family:Poppins;background:linear-gradient(-45deg,#667eea,#764ba2,#6dd5
 <a href="projects.html">Projects</a>
 </div>
 
+<!-- CARD -->
 <div class="card">
-<h2>About Me</h2>
-<p>I am Chinmaya, a creative tech student 💻 who loves gaming 🎮, music 🎧, and video editing 🎬.</p>
+
+<h2>About Me 👨‍💻</h2>
+
+<div class="section">
+<h3>👋 Introduction</h3>
+<p>
+Hi, I am <span class="highlight">Chinmaya</span>, currently pursuing <span class="highlight">B.Tech in Computer Science Engineering (2nd Year)</span>.  
+I am a passionate and creative person who enjoys learning new technologies and exploring digital creativity.
+</p>
+</div>
+
+<div class="section">
+<h3>🎓 Education</h3>
+<p>
+I completed my school education from <span class="highlight">Saraswati Sishu Vidya Mandir, Banki</span>, where I built a strong academic foundation.  
+After that, I pursued my +2 in Science from <span class="highlight">New Star Science College</span>.  
+Currently, I am continuing my higher studies in the field of technology and software development.
+</p>
+</div>
+
+<div class="section">
+<h3>👨‍👩‍👧 Family</h3>
+<p>
+I belong to a supportive and loving family. My father is a <span class="highlight">Railway employee</span> and my mother is a <span class="highlight">homemaker</span>.  
+I also have a younger sister who is an important part of my life.
+</p>
+
+<p>
+We live in a joint family environment where my <span class="highlight">elder uncle (Bade Papa)</span> is a <span class="highlight">Head Teacher</span> in a school.  
+My <span class="highlight">elder mother(badi maa)</span> and my cousins (two sisters and one brother) make our family even more lively and supportive.
+</p>
+</div>
+
+<div class="section">
+<h3>🎯 Interests & Passion</h3>
+<p>
+I have a strong interest in <span class="highlight">gaming 🎮</span>, <span class="highlight">music 🎧</span>, and <span class="highlight">video editing 🎬</span>.  
+I also enjoy <span class="highlight">photography 📸</span>, <span class="highlight">traveling ✈️</span>, and spending time with nature 🌿 and animals 🐾.
+</p>
+
+<p>
+My journey started with cricket 🏏, but after the lockdown, I gradually shifted towards esports and digital creativity, where I found my true interest.
+</p>
+</div>
+
+<div class="section">
+<h3>🚀 Future Goals</h3>
+<p>
+My goal is to grow as a skilled developer and creative professional, combining technology with creativity to build unique and impactful projects.  
+I am continuously learning and improving myself to achieve success in the tech world.
+</p>
+</div>
+
 </div>
 
 </body>
