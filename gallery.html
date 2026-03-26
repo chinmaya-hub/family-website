@@ -8,13 +8,19 @@
         .gallery {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
+            gap: 15px;
             padding: 20px;
         }
 
         .gallery img {
             width: 100%;
-            border-radius: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
         }
     </style>
 </head>
@@ -31,12 +37,12 @@
 <h2>My Photo Gallery 📸</h2>
 
 <div class="gallery">
-    <img src="photo1.jpg">
-    <img src="photo2.jpg">
-    <img src="photo3.jpg">
+    <img src="photo1.webp">
+    <img src="photo2.png">
+    <img src="photo3.png">
     <img src="photo4.jpg">
     <img src="photo5.jpg">
-    <img src="photo6.jpg">
+    <img src="photo6.png">
 </div>
 
 </body>
