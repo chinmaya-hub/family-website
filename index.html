@@ -1,188 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Chinmaya | Portfolio</title>
+<title>Chinmaya | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+body{
+background:linear-gradient(-45deg,#667eea,#764ba2,#6dd5ed,#2193b0);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+color:white;
+}
 
-    body {
-      height: 100vh;
-      background: linear-gradient(-45deg, #667eea, #764ba2, #6dd5ed, #2193b0);
-      background-size: 400% 400%;
-      animation: bg 10s ease infinite;
-    }
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
 
-    @keyframes bg {
-      0% {background-position:0% 50%;}
-      50% {background-position:100% 50%;}
-      100% {background-position:0% 50%;}
-    }
+.navbar{
+display:flex;
+justify-content:center;
+gap:25px;
+padding:15px;
+background:rgba(255,255,255,0.2);
+backdrop-filter:blur(10px);
+}
 
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 15px;
-      background: rgba(255,255,255,0.2);
-      backdrop-filter: blur(10px);
-    }
+.navbar a{
+text-decoration:none;
+color:white;
+font-weight:600;
+}
 
-    .navbar a {
-      text-decoration: none;
-      color: white;
-      font-weight: 600;
-      transition: 0.3s;
-    }
+.card{
+width:420px;
+margin:60px auto;
+background:rgba(255,255,255,0.2);
+padding:30px;
+border-radius:20px;
+text-align:center;
+backdrop-filter:blur(15px);
+}
 
-    .navbar a:hover {
-      color: yellow;
-    }
+.profile-img{
+width:160px;
+height:160px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid white;
+}
 
-    /* Card */
-    .card {
-      width: 420px;
-      margin: 60px auto;
-      background: rgba(255,255,255,0.2);
-      backdrop-filter: blur(15px);
-      border-radius: 20px;
-      padding: 30px;
-      text-align: center;
-      color: white;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-      animation: fade 1.2s ease;
-    }
+.bio{
+font-size:14px;
+line-height:1.7;
+margin-top:15px;
+}
 
-    @keyframes fade {
-      from {opacity:0; transform:translateY(20px);}
-      to {opacity:1; transform:translateY(0);}
-    }
+.btn{
+display:inline-block;
+padding:10px 18px;
+margin:8px;
+border-radius:20px;
+color:white;
+text-decoration:none;
+}
 
-    /* Image */
-    .profile-img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid white;
-      margin-bottom: 15px;
-    }
+.about{background:#00c853;}
+.contact{background:#2979ff;}
+.gallery{background:#ff6d00;}
 
-    h1 {
-      margin-bottom: 5px;
-    }
-
-    .subtitle {
-      font-size: 14px;
-      opacity: 0.8;
-      margin-bottom: 15px;
-    }
-
-    /* Bio */
-    .bio {
-      font-size: 14px;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      margin: 8px;
-      border-radius: 25px;
-      text-decoration: none;
-      color: white;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    .btn-about { background: #00c853; }
-    .btn-contact { background: #2979ff; }
-    .btn-gallery { background: #ff6d00; }
-
-    .btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 15px rgba(255,255,255,0.7);
-    }
-
-    /* Typing effect */
-    .typing::after {
-      content: "|";
-      animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-      50% {opacity:0;}
-    }
-
-  </style>
+</style>
 </head>
 
 <body>
 
-  <!-- Navbar -->
-  <div class="navbar">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="gallery.html">Gallery</a>
-  </div>
+<div class="navbar">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="gallery.html">Gallery</a>
+<a href="skills.html">Skills</a>
+<a href="projects.html">Projects</a>
+</div>
 
-  <!-- Card -->
-  <div class="card">
+<div class="card">
 
-    <!-- Image -->
-    <img src="photo2.png" class="profile-img">
+<img src="photo2.png" class="profile-img">
 
-    <!-- Name -->
-    <h1 class="typing" id="name"></h1>
+<h1>Chinmaya</h1>
+<p>B.Tech CSE Student 💻</p>
 
-    <div class="subtitle">B.Tech CSE Student 💻</div>
+<div class="bio">
+I love gaming 🎮, music 🎧, editing 🎬 and creativity.<br><br>
+I started with cricket 🏏 but after lockdown moved to esports.<br><br>
+I enjoy photography 📸, traveling ✈️, nature 🌿 and animals 🐾.
+</div>
 
-    <!-- BIO -->
-    <div class="bio">
-      I started my journey with a love for cricket 🏏, but after the lockdown, I developed a deep interest in online gaming 🎮 and even experienced competitive esports. <br><br>
+<a href="about.html" class="btn about">About</a>
+<a href="contact.html" class="btn contact">Contact</a>
+<a href="gallery.html" class="btn gallery">Gallery</a>
 
-      I am passionate about creativity — from producing music 🎧 to editing videos 🎬 with precision and style. <br><br>
-
-      I also enjoy photography and videography 📸, capturing moments and turning them into visuals that tell a story. <br><br>
-
-      Beyond tech, I love traveling ✈️, exploring nature 🌿, and spending time with animals 🐾. Music 🎶 and different seasons 🌦️ inspire me and keep my creativity alive.
-    </div>
-
-    <!-- Buttons -->
-    <a href="about.html" class="btn btn-about">About</a>
-    <a href="contact.html" class="btn btn-contact">Contact</a>
-    <br>
-    <a href="gallery.html" class="btn btn-gallery">Gallery</a>
-
-  </div>
-
-  <!-- Typing Script -->
-  <script>
-    const text = "Chinmaya";
-    let i = 0;
-
-    function type() {
-      if (i < text.length) {
-        document.getElementById("name").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(type, 120);
-      }
-    }
-
-    type();
-  </script>
+</div>
 
 </body>
 </html>
