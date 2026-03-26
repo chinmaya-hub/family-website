@@ -6,65 +6,101 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
 
 body{
-background:linear-gradient(-45deg,#667eea,#764ba2,#6dd5ed,#2193b0);
-background-size:400% 400%;
-animation:bg 10s ease infinite;
-color:white;
+  background:linear-gradient(-45deg,#667eea,#764ba2,#6dd5ed,#2193b0);
+  background-size:400% 400%;
+  animation:bg 10s ease infinite;
+  color:white;
 }
 
+/* BACKGROUND ANIMATION */
 @keyframes bg{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 
+/* NAVBAR */
 .navbar{
-display:flex;
-justify-content:center;
-gap:30px;
-padding:15px;
-background:rgba(255,255,255,0.2);
-backdrop-filter:blur(10px);
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  padding:15px;
+  background:rgba(255,255,255,0.2);
+  backdrop-filter:blur(10px);
 }
 
 .navbar a{
-text-decoration:none;
-color:white;
-font-weight:600;
+  text-decoration:none;
+  color:white;
+  font-weight:600;
+  transition:0.3s;
 }
 
+.navbar a:hover{
+  color:#00ffcc;
+}
+
+/* CONTAINER */
 .container{
-width:400px;
-margin:50px auto;
-background:rgba(255,255,255,0.2);
-padding:30px;
-border-radius:20px;
-backdrop-filter:blur(15px);
+  width:400px;
+  margin:60px auto;
+  background:rgba(255,255,255,0.2);
+  padding:30px;
+  border-radius:20px;
+  backdrop-filter:blur(15px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  animation:fadeIn 1s ease;
 }
 
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+h2{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+/* SKILLS */
 .skill{
-margin:15px 0;
+  margin:20px 0;
+  font-size:14px;
 }
 
 .bar{
-height:10px;
-background:#ccc;
-border-radius:10px;
-overflow:hidden;
+  height:10px;
+  background:#ccc;
+  border-radius:10px;
+  overflow:hidden;
+  margin-top:5px;
 }
 
 .fill{
-height:100%;
-background:lime;
+  height:100%;
+  background:linear-gradient(to right,#00ffcc,#00ff66);
+  border-radius:10px;
+  animation:load 2s ease;
 }
 
+/* WIDTHS */
 .html{width:80%;}
 .video{width:90%;}
 .music{width:70%;}
 .gaming{width:85%;}
+
+/* BAR ANIMATION */
+@keyframes load{
+  from{width:0;}
+}
 
 </style>
 </head>
@@ -72,11 +108,12 @@ background:lime;
 <body>
 
 <div class="navbar">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<a href="gallery.html">Gallery</a>
-<a href="skills.html">Skills</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="skills.html">Skills</a>
+  <a href="projects.html">Projects</a> <!-- ✅ FIX -->
 </div>
 
 <div class="container">
@@ -84,19 +121,19 @@ background:lime;
 <h2>My Skills 🚀</h2>
 
 <div class="skill">HTML
-<div class="bar"><div class="fill html"></div></div>
+  <div class="bar"><div class="fill html"></div></div>
 </div>
 
 <div class="skill">Video Editing 🎬
-<div class="bar"><div class="fill video"></div></div>
+  <div class="bar"><div class="fill video"></div></div>
 </div>
 
 <div class="skill">Music Production 🎧
-<div class="bar"><div class="fill music"></div></div>
+  <div class="bar"><div class="fill music"></div></div>
 </div>
 
 <div class="skill">Gaming / Esports 🎮
-<div class="bar"><div class="fill gaming"></div></div>
+  <div class="bar"><div class="fill gaming"></div></div>
 </div>
 
 </div>
