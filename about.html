@@ -131,7 +131,7 @@ max-height:90%;
 border-radius:10px;
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 @media(max-width:600px){
 .card{
 width:90%;
@@ -157,6 +157,7 @@ width:90%;
 
 <h2>About Me 👨‍💻</h2>
 
+<!-- SCHOOL -->
 <div class="section">
 <h3>🎓 My School Life</h3>
 <p>
@@ -167,6 +168,7 @@ This is where I built my foundation and learned discipline, education and values
 <img src="school photo.png" class="school-img" onclick="openImg(this.src)">
 </div>
 
+<!-- EDUCATION -->
 <div class="section">
 <h3>📘 Education</h3>
 <p>
@@ -175,6 +177,7 @@ Currently, I am pursuing <b>B.Tech CSE (2nd Year)</b>.
 </p>
 </div>
 
+<!-- FAMILY -->
 <div class="section">
 <h3>👨‍👩‍👧 Family</h3>
 <p>
@@ -188,6 +191,7 @@ Along with them, I have two cousin sisters and one cousin brother, making our fa
 </p>
 </div>
 
+<!-- INTEREST -->
 <div class="section">
 <h3>🎯 Interests</h3>
 <p>
@@ -195,25 +199,48 @@ I love gaming 🎮, music 🎧, video editing 🎬 and photography 📸.
 I also enjoy traveling ✈️, nature 🌿 and animals 🐾.
 </p>
 
-<!-- ✅ NEW ESPORTS PHOTO -->
 <img src="esports photo.jpg" class="school-img" onclick="openImg(this.src)">
+</div>
+
+<!-- FAVOURITES (IMAGES ONLY) -->
+<div class="section">
+<h3>⭐ My Favourites</h3>
+
+<p>🏏 MS Dhoni</p>
+<img src="Ms dhoni.jpg" class="school-img" onclick="openImg(this.src)">
+
+<p>🎬 Hrithik Roshan</p>
+<img src="Hrithik Roshan.jpeg" class="school-img" onclick="openImg(this.src)">
+
+<p>🎥 Robert Downey Jr.</p>
+<img src="Robert Downey junior.jpeg" class="school-img" onclick="openImg(this.src)">
+
+<p>🔥 Attack on Titan</p>
+<img src="Attack on Titan.jpeg" class="school-img" onclick="openImg(this.src)">
+
+<p>⚽ Cristiano Ronaldo</p>
+<img src="Cristiano Ronaldo.jpeg" class="school-img" onclick="openImg(this.src)">
+
+<p>🎮 TG Delete</p>
+<img src="Tg delete.jpg" class="school-img" onclick="openImg(this.src)">
+
 </div>
 
 </div>
 
 <!-- POPUP -->
 <div id="popup" onclick="closeImg()">
-  <img id="popupImg">
+<img id="popupImg">
 </div>
 
 <script>
 function openImg(src){
-  document.getElementById("popup").style.display="flex";
-  document.getElementById("popupImg").src=src;
+document.getElementById("popup").style.display="flex";
+document.getElementById("popupImg").src=src;
 }
 
 function closeImg(){
-  document.getElementById("popup").style.display="none";
+document.getElementById("popup").style.display="none";
 }
 </script>
 
