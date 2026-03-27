@@ -97,9 +97,11 @@ font-size:15px;
 line-height:1.8;
 }
 
-/* IMAGE */
+/* 🔥 IMAGE FIX (same size for all) */
 .school-img{
 width:100%;
+height:220px;
+object-fit:cover;
 border-radius:15px;
 margin-top:12px;
 cursor:pointer;
@@ -135,6 +137,10 @@ border-radius:10px;
 @media(max-width:600px){
 .card{
 width:90%;
+}
+
+.school-img{
+height:180px;
 }
 }
 </style>
@@ -202,7 +208,7 @@ I also enjoy traveling ✈️, nature 🌿 and animals 🐾.
 <img src="esports photo.jpg" class="school-img" onclick="openImg(this.src)">
 </div>
 
-<!-- FAVOURITES (IMAGES ONLY) -->
+<!-- FAVOURITES -->
 <div class="section">
 <h3>⭐ My Favourites</h3>
 
