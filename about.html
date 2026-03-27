@@ -13,7 +13,6 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
-/* BACKGROUND */
 body{
 background:linear-gradient(-45deg,#667eea,#764ba2,#6dd5ed,#2193b0);
 background-size:400% 400%;
@@ -82,7 +81,6 @@ margin-bottom:20px;
 font-size:30px;
 }
 
-/* SECTION */
 .section{
 margin-bottom:25px;
 }
@@ -97,7 +95,7 @@ font-size:15px;
 line-height:1.8;
 }
 
-/* 🔥 IMAGE FIX (same size for all) */
+/* IMAGE FIX */
 .school-img{
 width:100%;
 height:220px;
@@ -130,25 +128,18 @@ z-index:999;
 #popup img{
 width:90%;
 max-height:90%;
-border-radius:10px;
 }
 
 /* MOBILE */
 @media(max-width:600px){
-.card{
-width:90%;
-}
-
-.school-img{
-height:180px;
-}
+.card{width:90%;}
+.school-img{height:180px;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
@@ -158,44 +149,9 @@ height:180px;
 <a href="projects.html">Projects</a>
 </div>
 
-<!-- CARD -->
 <div class="card">
 
 <h2>About Me 👨‍💻</h2>
-
-<!-- SCHOOL -->
-<div class="section">
-<h3>🎓 My School Life</h3>
-<p>
-I completed my schooling from <b>Saraswati Sishu Vidya Mandir, Banki</b>.  
-This is where I built my foundation and learned discipline, education and values.
-</p>
-
-<img src="school photo.png" class="school-img" onclick="openImg(this.src)">
-</div>
-
-<!-- EDUCATION -->
-<div class="section">
-<h3>📘 Education</h3>
-<p>
-After school, I completed my +2 Science from <b>New Star Science College</b>.  
-Currently, I am pursuing <b>B.Tech CSE (2nd Year)</b>.
-</p>
-</div>
-
-<!-- FAMILY -->
-<div class="section">
-<h3>👨‍👩‍👧 Family</h3>
-<p>
-My father is a railway employee and my mother is a homemaker.  
-I also have a younger sister.
-</p>
-
-<p>
-We live in a joint family where my elder uncle is a head teacher and my elder mother (Badi Maa) supports the family.  
-Along with them, I have two cousin sisters and one cousin brother, making our family full of love, support and happiness.
-</p>
-</div>
 
 <!-- INTEREST -->
 <div class="section">
@@ -209,27 +165,65 @@ I also enjoy traveling ✈️, nature 🌿 and animals 🐾.
 </div>
 
 <!-- FAVOURITES -->
+
 <div class="section">
-<h3>⭐ My Favourites</h3>
-
-<p>🏏 MS Dhoni</p>
+<h3>🏏 MS Dhoni</h3>
+<p>
+MS Dhoni is known for his calm mindset and strong leadership.  
+He has finished many matches in pressure situations and inspired millions.  
+His journey teaches confidence, patience and smart decision making.
+</p>
 <img src="Ms dhoni.jpg" class="school-img" onclick="openImg(this.src)">
+</div>
 
-<p>🎬 Hrithik Roshan</p>
+<div class="section">
+<h3>🎬 Hrithik Roshan</h3>
+<p>
+Hrithik Roshan is one of the most talented actors in Bollywood.  
+His dancing skills, fitness and acting make him unique.  
+He motivates people to stay confident and work hard.
+</p>
 <img src="Hrithik Roshan.jpeg" class="school-img" onclick="openImg(this.src)">
+</div>
 
-<p>🎥 Robert Downey Jr.</p>
+<div class="section">
+<h3>🎥 Robert Downey Jr.</h3>
+<p>
+Robert Downey Jr. is famous for his role as Iron Man.  
+His acting and personality made Marvel movies very popular.  
+His life journey shows how to rise again after failures.
+</p>
 <img src="Robert Downey junior.jpeg" class="school-img" onclick="openImg(this.src)">
+</div>
 
-<p>🔥 Attack on Titan</p>
+<div class="section">
+<h3>🔥 Attack on Titan</h3>
+<p>
+Attack on Titan is one of the best anime series.  
+It has an amazing story, action and emotional moments.  
+It teaches about freedom, sacrifice and survival.
+</p>
 <img src="Attack on Titan.jpeg" class="school-img" onclick="openImg(this.src)">
+</div>
 
-<p>⚽ Cristiano Ronaldo</p>
+<div class="section">
+<h3>⚽ Cristiano Ronaldo</h3>
+<p>
+Cristiano Ronaldo is one of the greatest footballers ever.  
+His dedication, discipline and hard work are inspiring.  
+He always pushes his limits to stay at the top.
+</p>
 <img src="Cristiano Ronaldo.jpeg" class="school-img" onclick="openImg(this.src)">
+</div>
 
-<p>🎮 TG Delete</p>
+<div class="section">
+<h3>🎮 TG Delete</h3>
+<p>
+TG Delete is a popular esports player known for his gameplay.  
+His skills and strategies make him stand out in competitions.  
+He inspires young gamers to improve and stay focused.
+</p>
 <img src="Tg delete.jpg" class="school-img" onclick="openImg(this.src)">
-
 </div>
 
 </div>
