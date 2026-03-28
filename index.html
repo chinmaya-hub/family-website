@@ -53,8 +53,24 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-height:80vh;
+height:90vh;
 padding:20px;
+}
+
+/* Profile Image */
+.profile-img{
+width:150px;
+height:150px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid #38bdf8;
+margin-bottom:15px;
+transition:0.3s;
+}
+
+.profile-img:hover{
+transform:scale(1.08);
+box-shadow:0 0 20px #38bdf8;
 }
 
 .hero h1{
@@ -101,6 +117,10 @@ text-decoration:none;
 font-size:14px;
 }
 
+.social a:hover{
+text-decoration:underline;
+}
+
 /* Section */
 .section{
 padding:40px 20px;
@@ -125,6 +145,7 @@ color:#94a3b8;
 flex-direction:column;
 gap:10px;
 }
+
 .hero h1{
 font-size:28px;
 }
@@ -147,6 +168,9 @@ font-size:28px;
 
 <!-- HERO -->
 <div class="hero">
+
+<img src="photo2.png" class="profile-img">
+
 <h1>Hi, I'm <span>Chinmaya</span> 👋</h1>
 <p>B.Tech CSE Student | Aspiring Web Developer 💻</p>
 
@@ -157,6 +181,7 @@ font-size:28px;
 <a href="https://github.com/chinmaya-hub" target="_blank">GitHub</a>
 <a href="https://www.linkedin.com/in/chinmaya-piroi-852742329" target="_blank">LinkedIn</a>
 </div>
+
 </div>
 
 <!-- ABOUT SHORT -->
