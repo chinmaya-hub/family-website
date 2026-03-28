@@ -8,7 +8,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
 body{
 background:#0f172a;
@@ -19,8 +24,14 @@ color:white;
 .navbar{
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:15px 50px;
 background:#020617;
+}
+
+.logo{
+font-size:18px;
+font-weight:600;
 }
 
 .navbar a{
@@ -28,6 +39,7 @@ text-decoration:none;
 color:white;
 margin-left:20px;
 font-size:14px;
+transition:0.3s;
 }
 
 .navbar a:hover{
@@ -96,6 +108,14 @@ padding:20px;
 font-size:13px;
 color:#94a3b8;
 }
+
+/* Responsive */
+@media(max-width:600px){
+.navbar{
+flex-direction:column;
+gap:10px;
+}
+}
 </style>
 </head>
 
@@ -103,7 +123,7 @@ color:#94a3b8;
 
 <!-- NAVBAR -->
 <div class="navbar">
-<div>Chinmaya</div>
+<div class="logo">Chinmaya</div>
 <div>
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
