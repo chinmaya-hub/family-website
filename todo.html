@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To-Do App | Chinmaya</title>
+
+<style>
+body{
+font-family:Arial;
+background:#0f172a;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+background:#020617;
+padding:25px;
+border-radius:15px;
+width:350px;
+text-align:center;
+}
+
+input{
+width:70%;
+padding:8px;
+border:none;
+border-radius:8px;
+}
+
+button{
+padding:8px 12px;
+border:none;
+background:#38bdf8;
+color:black;
+border-radius:8px;
+cursor:pointer;
+}
+
+ul{
+list-style:none;
+margin-top:20px;
+}
+
+li{
+background:#1e293b;
+padding:10px;
+margin:8px 0;
+border-radius:8px;
+display:flex;
+justify-content:space-between;
+}
+
+.delete{
+color:red;
+cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>To-Do List 📝</h2>
+
+<input type="text" id="taskInput" placeholder="Enter task">
+<button onclick="addTask()">Add</button>
+
+<ul id="taskList"></ul>
+</div>
+
+<script>
+function addTask(){
+let input=document.getElementById("taskInput");
+let task=input.value;
+
+if(task==="") return;
+
+let li=document.createElement("li");
+li.innerHTML = task + ' <span class="delete" onclick="this.parentElement.remove()">❌</span>';
+
+document.getElementById("taskList").appendChild(li);
+
+input.value="";
+}
+</script>
+
+</body>
+</html>
