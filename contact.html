@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Contact</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Chinmaya</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-<!-- ICON LIBRARY -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
@@ -17,73 +18,125 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:linear-gradient(-45deg,#667eea,#764ba2,#6dd5ed,#2193b0);
+background:#0f172a;
 color:white;
 }
 
-/* NAVBAR */
+/* Navbar */
 .navbar{
-text-align:center;
-padding:15px;
+display:flex;
+justify-content:space-between;
+padding:15px 50px;
+background:#020617;
 }
 
 .navbar a{
-margin:10px;
 color:white;
 text-decoration:none;
-font-weight:600;
+margin-left:20px;
+font-size:14px;
 }
 
-/* CARD */
+.navbar a:hover{
+color:#38bdf8;
+}
+
+/* Container */
+.container{
+display:flex;
+justify-content:center;
+align-items:center;
+height:80vh;
+}
+
+/* Card */
 .card{
-width:350px;
-margin:60px auto;
-background:rgba(255,255,255,0.2);
+background:#020617;
 padding:30px;
-border-radius:20px;
+border-radius:15px;
+width:350px;
 text-align:center;
+border:1px solid #1e293b;
 }
 
-/* CONTACT ITEMS */
-.contact-item{
+h2{
+margin-bottom:20px;
+}
+
+/* Items */
+.item{
 margin:15px 0;
-font-size:16px;
+font-size:14px;
 }
 
-.contact-item i{
+.item i{
 margin-right:10px;
-color:#00ffcc;
+color:#38bdf8;
 }
 
+/* Links */
+a{
+color:#38bdf8;
+text-decoration:none;
+}
+
+a:hover{
+text-decoration:underline;
+}
+
+/* Footer */
+.footer{
+text-align:center;
+padding:20px;
+font-size:13px;
+color:#94a3b8;
+}
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <div class="navbar">
+<div>Chinmaya</div>
+<div>
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<a href="gallery.html">Gallery</a>
-<a href="skills.html">Skills</a>
 <a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
+</div>
 </div>
 
-<div class="card">
-<h2>Contact 📞</h2>
+<div class="container">
 
-<p class="contact-item">
+<div class="card">
+<h2>Contact Me 📞</h2>
+
+<p class="item">
 <i class="fa-solid fa-user"></i> Chinmaya
 </p>
 
-<p class="contact-item">
-<i class="fa-solid fa-envelope"></i> piroichinmaya64@gmail.com
+<p class="item">
+<i class="fa-solid fa-envelope"></i> 
+<a href="mailto:piroichinmaya64@gmail.com">piroichinmaya64@gmail.com</a>
 </p>
 
-<p class="contact-item">
-<i class="fa-brands fa-instagram"></i> this_is_chintu_07
+<p class="item">
+<i class="fa-brands fa-github"></i> 
+<a href="https://github.com/chinmaya-hub" target="_blank">GitHub Profile</a>
 </p>
 
+<p class="item">
+<i class="fa-brands fa-linkedin"></i> 
+<a href="https://www.linkedin.com/in/chinmaya-piroi-852742329" target="_blank">LinkedIn Profile</a>
+</p>
+
+</div>
+
+</div>
+
+<div class="footer">
+Let's Connect 🚀
 </div>
 
 </body>
