@@ -46,7 +46,9 @@ color:#38bdf8;
 display:flex;
 justify-content:center;
 align-items:center;
-height:80vh;
+gap:40px;
+flex-wrap:wrap;
+padding:40px;
 }
 
 /* Card */
@@ -84,12 +86,49 @@ a:hover{
 text-decoration:underline;
 }
 
+/* FORM */
+.form-box{
+background:#020617;
+padding:30px;
+border-radius:15px;
+width:350px;
+border:1px solid #1e293b;
+}
+
+input, textarea{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:none;
+border-radius:8px;
+}
+
+button{
+width:100%;
+padding:10px;
+border:none;
+background:#38bdf8;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0ea5e9;
+}
+
 /* Footer */
 .footer{
 text-align:center;
 padding:20px;
 font-size:13px;
 color:#94a3b8;
+}
+
+/* Responsive */
+@media(max-width:768px){
+.container{
+flex-direction:column;
+}
 }
 </style>
 </head>
@@ -109,6 +148,7 @@ color:#94a3b8;
 
 <div class="container">
 
+<!-- EXISTING CARD (UNCHANGED) -->
 <div class="card">
 <h2>Contact Me 📞</h2>
 
@@ -130,6 +170,24 @@ color:#94a3b8;
 <i class="fa-brands fa-linkedin"></i> 
 <a href="https://www.linkedin.com/in/chinmaya-piroi-852742329" target="_blank">LinkedIn Profile</a>
 </p>
+
+</div>
+
+<!-- NEW EMAIL FORM -->
+<div class="form-box">
+<h2>Send Message 📩</h2>
+
+<form action="https://formsubmit.co/piroichinmaya64@gmail.com" method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
 
 </div>
 
