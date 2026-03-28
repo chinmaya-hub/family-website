@@ -15,7 +15,6 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
-/* Background */
 body{
 background:#0f172a;
 color:white;
@@ -28,18 +27,16 @@ justify-content:space-between;
 align-items:center;
 padding:15px 50px;
 background:#020617;
-position:sticky;
-top:0;
 }
 
 .logo{
+font-size:18px;
 font-weight:600;
-font-size:20px;
 }
 
 .navbar a{
-color:white;
 text-decoration:none;
+color:white;
 margin-left:20px;
 font-size:14px;
 transition:0.3s;
@@ -53,84 +50,71 @@ color:#38bdf8;
 .hero{
 display:flex;
 flex-direction:column;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
-height:90vh;
+height:80vh;
 padding:20px;
 }
 
-.profile-img{
-width:150px;
-height:150px;
-border-radius:50%;
-object-fit:cover;
-border:3px solid #38bdf8;
-margin-bottom:20px;
-transition:0.3s;
-}
-
-.profile-img:hover{
-transform:scale(1.05);
-}
-
-h1{
-font-size:32px;
+.hero h1{
+font-size:40px;
 margin-bottom:10px;
 }
 
-.subtitle{
-color:#94a3b8;
-margin-bottom:15px;
+.hero span{
+color:#38bdf8;
 }
 
-.bio{
-max-width:500px;
-font-size:14px;
-line-height:1.6;
-margin-bottom:25px;
+.hero p{
+font-size:16px;
+color:#94a3b8;
+margin-bottom:20px;
 }
 
 /* Buttons */
 .btn{
 padding:10px 18px;
+margin:5px;
 border-radius:20px;
 text-decoration:none;
-margin:5px;
-display:inline-block;
 font-size:14px;
+border:1px solid #38bdf8;
+color:#38bdf8;
 transition:0.3s;
 }
 
-.primary{
+.btn:hover{
 background:#38bdf8;
 color:black;
 }
 
-.secondary{
-border:1px solid #38bdf8;
-color:#38bdf8;
+/* Social Links */
+.social{
+margin-top:15px;
 }
 
-.btn:hover{
-transform:translateY(-2px);
+.social a{
+margin:0 10px;
+color:#38bdf8;
+text-decoration:none;
+font-size:14px;
 }
 
 /* Section */
 .section{
-padding:60px 20px;
+padding:40px 20px;
 text-align:center;
 }
 
 .section h2{
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
 /* Footer */
 .footer{
 text-align:center;
 padding:20px;
-background:#020617;
 font-size:13px;
 color:#94a3b8;
 }
@@ -139,6 +123,10 @@ color:#94a3b8;
 @media(max-width:600px){
 .navbar{
 flex-direction:column;
+gap:10px;
+}
+.hero h1{
+font-size:28px;
 }
 }
 </style>
@@ -159,29 +147,36 @@ flex-direction:column;
 
 <!-- HERO -->
 <div class="hero">
-<img src="photo2.png" class="profile-img">
+<h1>Hi, I'm <span>Chinmaya</span> 👋</h1>
+<p>B.Tech CSE Student | Aspiring Web Developer 💻</p>
 
-<h1>Hi, I'm Chinmaya 👋</h1>
-<p class="subtitle">B.Tech CSE Student | Aspiring Software Developer</p>
+<a href="projects.html" class="btn">View Projects</a>
+<a href="contact.html" class="btn">Contact Me</a>
 
-<div class="bio">
-I am passionate about coding and currently learning Java, Data Structures & Algorithms, and Web Development.  
-I enjoy building projects and improving my problem-solving skills.
+<div class="social">
+<a href="https://github.com/chinmaya-hub" target="_blank">GitHub</a>
+<a href="https://www.linkedin.com/in/chinmaya-piroi-852742329" target="_blank">LinkedIn</a>
+</div>
 </div>
 
-<a href="projects.html" class="btn primary">View Projects</a>
-<a href="contact.html" class="btn secondary">Contact Me</a>
-</div>
-
-<!-- SKILLS SECTION -->
+<!-- ABOUT SHORT -->
 <div class="section">
-<h2>My Skills</h2>
-<p>Java • C • DSA • HTML • CSS</p>
+<h2>About Me</h2>
+<p>
+I am a 2nd year B.Tech CSE student passionate about coding, web development and building real projects.  
+I enjoy learning new technologies and improving my skills every day.
+</p>
+</div>
+
+<!-- SKILLS -->
+<div class="section">
+<h2>Skills</h2>
+<p>HTML • CSS • JavaScript • Java • GitHub</p>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-© 2026 Chinmaya | Portfolio Website
+© 2026 Chinmaya | Built with 💻
 </div>
 
 </body>
