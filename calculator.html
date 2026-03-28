@@ -3,232 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>To-Do List | Chinmaya</title>
+<title>Calculator | Chinmaya</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
 body{
 background:#0f172a;
 color:white;
+font-family:Arial;
+margin:0;
 }
 
-/* NAVBAR */
+/* Navbar */
 .navbar{
 display:flex;
 justify-content:space-between;
-align-items:center;
 padding:15px 40px;
 background:#020617;
-}
-
-.logo{
-font-weight:600;
 }
 
 .navbar a{
 color:white;
 text-decoration:none;
 margin-left:20px;
-font-size:14px;
 }
 
 .navbar a:hover{
 color:#38bdf8;
 }
 
-/* BACK BUTTON */
+/* Back Button */
 .back{
-padding:15px 40px;
-}
-
-.back a{
+margin:20px 40px;
+display:inline-block;
 color:#38bdf8;
 text-decoration:none;
-font-size:14px;
 }
 
-.back a:hover{
+.back:hover{
 text-decoration:underline;
 }
 
-/* MAIN */
-.main{
+/* Calculator Box */
+.container{
 display:flex;
 justify-content:center;
 align-items:center;
-height:80vh;
+height:75vh;
 }
 
-.container{
+.calculator{
 background:#020617;
 padding:25px;
 border-radius:15px;
-width:340px;
 box-shadow:0 10px 25px rgba(0,0,0,0.5);
+width:260px;
+text-align:center;
 }
 
-/* INPUT */
-input{
+.display{
 width:100%;
-padding:10px;
+height:50px;
+background:#1e293b;
 border:none;
-outline:none;
 border-radius:8px;
-margin-bottom:10px;
+margin-bottom:15px;
+text-align:right;
+font-size:20px;
+color:white;
+padding:10px;
 }
 
-/* BUTTON */
+.buttons{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+}
+
 button{
-width:100%;
-padding:10px;
+padding:12px;
 border:none;
-background:#38bdf8;
 border-radius:8px;
+background:#1e293b;
+color:white;
+font-size:16px;
 cursor:pointer;
-font-weight:bold;
 }
 
 button:hover{
-background:#0ea5e9;
+background:#38bdf8;
+color:black;
 }
 
-/* LIST */
-ul{
-list-style:none;
-margin-top:15px;
+.equal{
+grid-column:span 2;
+background:#38bdf8;
+color:black;
 }
 
-li{
-background:#1e293b;
-padding:10px;
-border-radius:8px;
-margin-bottom:8px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.delete{
-color:red;
-cursor:pointer;
-font-weight:bold;
-}
-
-.completed{
-text-decoration:line-through;
-opacity:0.6;
-cursor:pointer;
+.clear{
+background:#ef4444;
 }
 </style>
-
 </head>
+
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
-<div class="logo">Chinmaya</div>
+<div>Chinmaya</div>
 <div>
-<a href="https://chinmaya-hub.github.io/chinmaya-web/">Home</a>
-<a href="https://chinmaya-hub.github.io/chinmaya-web/projects.html">Projects</a>
+<a href="index.html">Home</a>
+<a href="projects.html">Projects</a>
 </div>
 </div>
 
-<!-- BACK BUTTON -->
-<div class="back">
-<a href="https://chinmaya-hub.github.io/chinmaya-web/projects.html">⬅ Back to Projects</a>
-</div>
+<a href="projects.html" class="back">← Back to Projects</a>
 
-<!-- MAIN -->
-<div class="main">
 <div class="container">
+<div class="calculator">
 
-<h2>My To-Do List 📋</h2>
+<h2>Calculator 🧮</h2>
 
-<input type="text" id="taskInput" placeholder="Enter a task...">
-<button onclick="addTask()">Add Task</button>
+<input type="text" id="display" class="display" readonly>
 
-<ul id="taskList"></ul>
+<div class="buttons">
+<button onclick="press('7')">7</button>
+<button onclick="press('8')">8</button>
+<button onclick="press('9')">9</button>
+<button onclick="press('/')">/</button>
+
+<button onclick="press('4')">4</button>
+<button onclick="press('5')">5</button>
+<button onclick="press('6')">6</button>
+<button onclick="press('*')">*</button>
+
+<button onclick="press('1')">1</button>
+<button onclick="press('2')">2</button>
+<button onclick="press('3')">3</button>
+<button onclick="press('-')">-</button>
+
+<button onclick="press('0')">0</button>
+<button onclick="press('.')">.</button>
+<button onclick="backspace()">⌫</button>
+<button onclick="press('+')">+</button>
+
+<button class="clear" onclick="clearDisplay()">C</button>
+<button class="equal" onclick="calculate()">=</button>
+</div>
 
 </div>
 </div>
 
 <script>
+let display = document.getElementById("display");
 
-// Load tasks
-window.onload = function(){
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-tasks.forEach(task => createTask(task.text, task.completed));
-};
-
-// Add task
-function addTask(){
-let input = document.getElementById("taskInput");
-let task = input.value.trim();
-
-if(task === ""){
-alert("Please enter a task!");
-return;
+function press(val){
+display.value += val;
 }
 
-createTask(task, false);
-saveTasks();
-
-input.value = "";
+function clearDisplay(){
+display.value = "";
 }
 
-// Enter key support
-document.getElementById("taskInput").addEventListener("keypress", function(e){
-if(e.key === "Enter"){
-addTask();
-}
-});
-
-// Create task UI
-function createTask(text, completed){
-let li = document.createElement("li");
-
-li.innerHTML = `
-<span onclick="toggleTask(this)">${text}</span>
-<span class="delete" onclick="deleteTask(this)">X</span>
-`;
-
-if(completed){
-li.querySelector("span").classList.add("completed");
+function backspace(){
+display.value = display.value.slice(0,-1);
 }
 
-document.getElementById("taskList").appendChild(li);
+function calculate(){
+try{
+display.value = eval(display.value);
+}catch{
+display.value = "Error";
 }
-
-// Delete task
-function deleteTask(element){
-element.parentElement.remove();
-saveTasks();
 }
-
-// Toggle complete
-function toggleTask(element){
-element.classList.toggle("completed");
-saveTasks();
-}
-
-// Save tasks
-function saveTasks(){
-let tasks = [];
-document.querySelectorAll("#taskList li").forEach(li => {
-tasks.push({
-text: li.querySelector("span").innerText,
-completed: li.querySelector("span").classList.contains("completed")
-});
-});
-localStorage.setItem("tasks", JSON.stringify(tasks));
-}
-
 </script>
 
 </body>
