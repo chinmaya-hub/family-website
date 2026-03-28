@@ -67,11 +67,14 @@ padding:20px;
 border-radius:15px;
 border:1px solid #1e293b;
 transition:0.3s;
+position:relative;
+overflow:hidden;
 }
 
 .card:hover{
-transform:translateY(-5px);
+transform:translateY(-8px) scale(1.02);
 border-color:#38bdf8;
+box-shadow:0 10px 25px rgba(56,189,248,0.2);
 }
 
 .card h3{
@@ -84,9 +87,11 @@ color:#38bdf8;
 margin-bottom:10px;
 }
 
+/* Buttons */
 .btn{
 display:inline-block;
 margin-top:10px;
+margin-right:8px;
 padding:8px 15px;
 border-radius:15px;
 text-decoration:none;
@@ -142,6 +147,7 @@ gap:10px;
 <p class="tech">HTML • CSS</p>
 <p>Personal portfolio website to showcase my skills and projects.</p>
 <a href="https://github.com/chinmaya-hub/chinmaya-web" target="_blank" class="btn">View Code</a>
+<a href="https://chinmaya-hub.github.io/chinmaya-web/" target="_blank" class="btn">Live Demo</a>
 </div>
 
 <!-- Project 2 -->
@@ -156,14 +162,15 @@ gap:10px;
 <div class="card">
 <h3>To-Do List</h3>
 <p class="tech">HTML • CSS • JavaScript</p>
-<p>A simple task manager to add and track daily tasks.</p>
-<a href="#" class="btn">Coming Soon</a>
+<p>A simple task manager to add, delete and mark tasks as completed.</p>
+<a href="https://chinmaya-hub.github.io/chinmaya-todo-list/" target="_blank" class="btn">Live Demo</a>
+<a href="https://github.com/chinmaya-hub/chinmaya-todo-list" target="_blank" class="btn">View Code</a>
 </div>
 
 </div>
 
 <div class="footer">
-More projects coming soon 🚀
+Built with 💻 by Chinmaya | More projects coming soon 🚀
 </div>
 
 </body>
