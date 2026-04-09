@@ -27,6 +27,9 @@ justify-content:space-between;
 align-items:center;
 padding:15px 50px;
 background:#020617;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .logo{
@@ -40,6 +43,22 @@ color:white;
 margin-left:20px;
 font-size:14px;
 transition:0.3s;
+position:relative;
+}
+
+.navbar a::after{
+content:"";
+position:absolute;
+width:0%;
+height:2px;
+bottom:-3px;
+left:0;
+background:#38bdf8;
+transition:0.3s;
+}
+
+.navbar a:hover::after{
+width:100%;
 }
 
 .navbar a:hover{
@@ -50,6 +69,12 @@ color:#38bdf8;
 h2{
 text-align:center;
 margin:30px 0;
+animation:fadeDown 1s ease;
+}
+
+@keyframes fadeDown{
+from{opacity:0;transform:translateY(-20px);}
+to{opacity:1;transform:translateY(0);}
 }
 
 /* Container */
@@ -69,6 +94,13 @@ border:1px solid #1e293b;
 transition:0.3s;
 position:relative;
 overflow:hidden;
+animation:fadeUp 1s ease;
+}
+
+/* Animation */
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
 }
 
 /* Glow Effect */
@@ -88,9 +120,9 @@ left:100%;
 }
 
 .card:hover{
-transform:translateY(-8px) scale(1.02);
+transform:translateY(-10px) scale(1.03);
 border-color:#38bdf8;
-box-shadow:0 10px 25px rgba(56,189,248,0.2);
+box-shadow:0 15px 30px rgba(56,189,248,0.25);
 }
 
 .card h3{
@@ -108,6 +140,7 @@ color:black;
 margin-left:8px;
 }
 
+/* Tech */
 .tech{
 font-size:12px;
 color:#38bdf8;
@@ -131,6 +164,24 @@ transition:0.3s;
 .btn:hover{
 background:#38bdf8;
 color:black;
+transform:translateY(-2px) scale(1.05);
+box-shadow:0 5px 15px rgba(56,189,248,0.3);
+}
+
+/* NEW: Card bottom animation line */
+.card::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:0%;
+height:2px;
+background:#38bdf8;
+transition:0.4s;
+}
+
+.card:hover::after{
+width:100%;
 }
 
 /* Footer */
