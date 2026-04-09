@@ -28,6 +28,9 @@ display:flex;
 justify-content:space-between;
 padding:15px 50px;
 background:#020617;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .navbar a{
@@ -35,6 +38,7 @@ color:white;
 text-decoration:none;
 margin-left:20px;
 font-size:14px;
+transition:0.3s;
 }
 
 .navbar a:hover{
@@ -59,6 +63,12 @@ border-radius:15px;
 width:350px;
 text-align:center;
 border:1px solid #1e293b;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(56,189,248,0.2);
 }
 
 h2{
@@ -93,6 +103,12 @@ padding:30px;
 border-radius:15px;
 width:350px;
 border:1px solid #1e293b;
+transition:0.3s;
+}
+
+.form-box:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(56,189,248,0.2);
 }
 
 input, textarea{
@@ -101,8 +117,15 @@ padding:10px;
 margin:10px 0;
 border:none;
 border-radius:8px;
+outline:none;
+transition:0.3s;
 }
 
+input:focus, textarea:focus{
+box-shadow:0 0 8px #38bdf8;
+}
+
+/* Button */
 button{
 width:100%;
 padding:10px;
@@ -110,10 +133,13 @@ border:none;
 background:#38bdf8;
 border-radius:8px;
 cursor:pointer;
+font-weight:bold;
+transition:0.3s;
 }
 
 button:hover{
 background:#0ea5e9;
+transform:scale(1.03);
 }
 
 /* Footer */
