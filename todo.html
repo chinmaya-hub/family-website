@@ -118,10 +118,20 @@ border-radius:8px;
 cursor:pointer;
 font-weight:bold;
 transition:0.3s;
+margin-top:5px;
 }
 
 button:hover{
 background:#0ea5e9;
+}
+
+/* CLEAR BUTTON */
+.clearAll{
+background:#ef4444;
+}
+
+.clearAll:hover{
+background:#dc2626;
 }
 
 /* LIST */
@@ -139,6 +149,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 transition:0.3s;
+animation:fadeIn 0.3s ease;
 }
 
 li:hover{
@@ -157,6 +168,14 @@ font-weight:bold;
 text-decoration:line-through;
 opacity:0.6;
 cursor:pointer;
+}
+
+/* COUNTER */
+.counter{
+margin-top:10px;
+font-size:12px;
+text-align:center;
+color:#94a3b8;
 }
 </style>
 
@@ -186,7 +205,11 @@ cursor:pointer;
 <input type="text" id="taskInput" placeholder="Enter a task...">
 <button onclick="addTask()">Add Task</button>
 
+<button class="clearAll" onclick="clearAll()">Clear All</button>
+
 <ul id="taskList"></ul>
+
+<div class="counter" id="counter">0 Tasks</div>
 
 </div>
 </div>
@@ -197,6 +220,7 @@ cursor:pointer;
 window.onload = function(){
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 tasks.forEach(task => createTask(task.text, task.completed));
+updateCounter();
 };
 
 // Add task
@@ -211,6 +235,7 @@ return;
 
 createTask(task, false);
 saveTasks();
+updateCounter();
 
 input.value = "";
 }
@@ -242,12 +267,22 @@ document.getElementById("taskList").appendChild(li);
 function deleteTask(element){
 element.parentElement.remove();
 saveTasks();
+updateCounter();
 }
 
 // Toggle complete
 function toggleTask(element){
 element.classList.toggle("completed");
 saveTasks();
+}
+
+// Clear all tasks
+function clearAll(){
+if(confirm("Are you sure to delete all tasks?")){
+document.getElementById("taskList").innerHTML = "";
+saveTasks();
+updateCounter();
+}
 }
 
 // Save tasks
@@ -260,6 +295,12 @@ completed: li.querySelector("span").classList.contains("completed")
 });
 });
 localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+// Update counter
+function updateCounter(){
+let count = document.querySelectorAll("#taskList li").length;
+document.getElementById("counter").innerText = count + " Tasks";
 }
 
 </script>
